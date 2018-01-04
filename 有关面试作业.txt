@@ -1,0 +1,43 @@
+1. Cookie和session都是会话跟踪技术，Cookie保存在客户端，而session保存在服务器端?
+2. session的默认空闲时间不可修改?
+3. session是依赖Cookie的，即基于Cookie动作
+4. 浏览器可以保存的Cookie个数是没有上限的
+5. 如何修改Cookie的存活时间?
+6. 与Cookie相关的请求头和响应头?
+7. session依赖的cookie名称叫什么?
+8. 一个浏览器同时保存多个名为JSESSIONID的cookie是否可以?
+9. 如何删除cookie? 
+
+10. cookie路径问题：　
+当前Servlet请求路径为：http://localhost/news/servlet/Servlet1   /news/servlet
+默认情况cookie的路径就是当前servlet所在的路径(因为这个cookie就是在这个servlet中创建的！) 
+
+当前Servlet代码为：
+  Cookie c = new Cookie(“myCookie”,”xxxx”);
+  response.addCookie(c);
+那么这个Cookie的path为？
+那么访问http://localhost/news/Servlet3路径时是否会归还cookie给服务器   
+
+
+11.服务器在什么时候会创建session对象? 
+12.session的invalidate()方法什么作用
+13.客户端关闭浏览器，服务器端是否会知道?
+14.当session过期，服务器会清理这个session
+15.每个session都有一个sessionid，而且它是唯一的
+16.sessionid是由服务器生成的
+17.sessionid必须通过cookie保存到浏览器 
+18.request.getSession(false), request.getSession(true), request.getSession()，请解释
+19.session域的范围是整个会话
+20.session的存活时间必须是30分钟，不能修改！调用session的任何方法都不能销毁session，就算从tomcat中删除当前项目也不能销毁session
+21.url重写可以保证在客户端浏览器不支持cookie时，保证session可以使用
+22.url重写是把sessionid附加到某个超链接的url后
+23.request.getSession()方法查看cookie中的sessionid，如果不存在会查看url后是否存在sessionid参数。
+24.如果浏览器没有禁用cookie，那么response.encodeURL()方法不会进行url重写。
+25.什么样的数据适合保存到session中(登录成功的用户信息、一次性验证码校验)
+26.cookie技术是JavaWeb制定的，所以只有JavaWeb程序中才能使用cookie技术
+27.cookie是保存在客户端的数据，有可能被恶意利用
+28.session是保存在服务器端的，只要用户访问了服务器，服务器马上就会创建session对象，并且长时间存活下去！
+
+=======================================
+session的ID丢失了，session存在吗？
+
